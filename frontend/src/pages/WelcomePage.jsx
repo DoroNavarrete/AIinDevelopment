@@ -104,22 +104,50 @@ export default function WelcomePage() {
         <div className="h-px w-24 bg-hairline-strong mt-12 mb-20" />
 
         {/* Microsoft Certifications Section */}
-        <section className="w-full max-w-5xl text-left">
-          <div className="flex items-baseline justify-between mb-2">
+        <section className="w-full max-w-6xl text-left">
+
+          {/* Section label row */}
+          <div className="flex items-center justify-between mb-3">
             <p className="font-mono text-muted text-[11px] tracking-[2px] uppercase">
               MICROSOFT LEARN
             </p>
-            <p className="font-mono text-muted-soft text-[10px] tracking-[1px] uppercase">
-              2026
-            </p>
+            <div className="flex items-center gap-6">
+              <span className="font-mono text-muted-soft text-[10px] tracking-[1.5px] uppercase">
+                {MICROSOFT_CERTIFICATIONS_2026.length} CERTIFICATIONS
+              </span>
+              <span className="font-mono text-muted-soft text-[10px] tracking-[1.5px] uppercase">
+                2026
+              </span>
+            </div>
           </div>
 
-          <h2 className="font-display text-ink text-[24px] tracking-[2px] uppercase mb-1">
+          {/* Section title + subtitle */}
+          <h2 className="font-display text-ink text-[28px] tracking-[2px] uppercase mb-2">
             LATEST CERTIFICATIONS
           </h2>
+          <p className="font-mono text-muted text-[11px] leading-relaxed mb-5 max-w-2xl">
+            New role-based certifications announced for 2026, covering AI, cloud, data engineering, and security.
+          </p>
 
-          <div className="h-px bg-hairline mb-10" />
+          <div className="h-px bg-hairline mb-6" />
 
+          {/* Category legend */}
+          <div className="flex items-center gap-8 mb-8">
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-[2px] bg-link" />
+              <span className="font-mono text-muted-soft text-[9px] tracking-[1.5px] uppercase">Azure</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-[2px] bg-success" />
+              <span className="font-mono text-muted-soft text-[9px] tracking-[1.5px] uppercase">GitHub</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-[2px] bg-warning" />
+              <span className="font-mono text-muted-soft text-[9px] tracking-[1.5px] uppercase">Microsoft 365</span>
+            </div>
+          </div>
+
+          {/* Cards grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-px bg-hairline">
             {MICROSOFT_CERTIFICATIONS_2026.map((cert) => (
               <CertificationCard key={cert.name} {...cert} />
